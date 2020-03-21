@@ -88,4 +88,19 @@ class Game {
             this.gameOver ();
         }  
     }
+
+    /**
+     * Displays game over message 
+     * @param {boolean} gameWon - whether or not the user won the game   
+     */
+    gameOver (gameWon) {
+        document.querySelector ('#overlay').style.display = '';
+        if (gameWon) {
+            document.querySelector ('#game-over-message').innerHTML = `<h1>Great Job!</h1>`;
+            document.querySelector ('#overlay').className = 'win'; 
+        } else {
+            document.querySelector ('#game-over-message').innerHTML = `<h1>Sorry, better luck next time!</h1>`;
+            document.querySelector ('#overlay').className = 'lose';
+        } 
+    }
 }
