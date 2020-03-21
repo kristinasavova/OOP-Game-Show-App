@@ -42,4 +42,50 @@ class Game {
         this.activePhrase.addPhraseToDisplay ();   
     }
 
+    /**
+     * Checks for winning move 
+     * @return {boolean} true if game has been won, false if game wasn't won   
+     */
+    checkForWin () {
+        const listItems = document.querySelector ('#phrase ul').children;
+        for (let i = 0; i < listItems.length; i ++) {
+            let listItem = listItems[i]; 
+            if (/^show\sletter\s[a-z]?$/.test(listItem.className)) {
+                return true; 
+            } else {
+                return false; 
+            } 
+        }
+    }
+
+    /**
+     * Increases the value of the missed property  
+     * Removes a life from the scoreboard
+     * Checks if player has remaining lives and ends game if player is out    
+     */
+    removeLife () {
+        const hearts = document.querySelectorAll ('.tries img'); 
+        if (hearts[4].getAttribute ('src') === 'images/liveHeart.png') {
+            hearts[4].removeAttribute ('src');
+            hearts[4].setAttribute ('src', 'images/lostHeart.png');
+            this.missed ++;
+        } else if (hearts[3].getAttribute ('src') === 'images/liveHeart.png') {
+            hearts[3].removeAttribute ('src');
+            hearts[3].setAttribute ('src', 'images/lostHeart.png');
+            this.missed ++;
+        } else if (hearts[2].getAttribute ('src') === 'images/liveHeart.png') {
+            hearts[2].removeAttribute ('src');
+            hearts[2].setAttribute ('src', 'images/lostHeart.png');
+            this.missed ++;
+        } else if (hearts[1].getAttribute ('src') === 'images/liveHeart.png') {
+            hearts[1].removeAttribute ('src');
+            hearts[1].setAttribute ('src', 'images/lostHeart.png');
+            this.missed ++;
+        } else if (hearts[0].getAttribute ('src') === 'images/liveHeart.png') {
+            hearts[0].removeAttribute ('src');
+            hearts[0].setAttribute ('src', 'images/lostHeart.png');
+            this.missed ++;
+            this.gameOver ();
+        }  
+    }
 }
