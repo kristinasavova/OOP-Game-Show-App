@@ -5,5 +5,5 @@
  */
 
 const game = new Game (); 
-
-console.log (game.getRandomPhrase ()); 
+game.startGame ();
+console.log (game.activePhrase);

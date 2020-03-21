@@ -8,13 +8,13 @@ class Game {
     constructor () {
         this.missed = 0;
         this.phrases = this.createPhrases (); 
-        this.activePhrase = null; 
+        this.activePhrase = new Phrase (this.getRandomPhrase ()); 
     }
 
-      /**
-       * Creates phrases for use in game
-       * @return {array} an array of phrases that could be used in the game
-       */
+    /**
+     * Creates phrases for use in game
+     * @return {array} an array of phrases that could be used in the game
+     */
     createPhrases () {
         let phrases = ['You are a wizard', 
                        'Never trust anything that can think for itself if you cannot see where it keeps its brain',
@@ -24,13 +24,22 @@ class Game {
         return phrases; 
     }
 
-      /**
-       * Select random phrase from phrases property
-       * @return {object} phrase object chosen to be used 
-       */
+    /**
+     * Select random phrase from phrases property
+     * @return {object} phrase object chosen to be used 
+     */
     getRandomPhrase () {
         for (let i = 0; i < this.phrases.length; i ++) {
             return this.phrases[Math.floor(Math.random() * this.phrases.length)]; 
         }
     } 
+
+    /**
+     * Begins game by selecting a random phrase and displaying it to user
+     */
+    startGame () {
+        document.querySelector ('#overlay').style.display = 'none';  
+        this.activePhrase.addPhraseToDisplay ();   
+    }
+
 }
