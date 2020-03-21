@@ -35,8 +35,7 @@ class Phrase {
     checkLetter (letter) {
         const listItems = document.querySelector ('#phrase ul').children;
         for (let i = 0; i < listItems.length; i ++) {
-            const listItem = listItems[i];
-            if (letter === listItem.textContent) {
+            if (letter === listItems[i].textContent) {
                 return true;
             } else {
                 return false; 
@@ -51,9 +50,8 @@ class Phrase {
     showMatchedLetter (letter) {
         const listItems = document.querySelector ('#phrase ul').children;
         for (let i =0; i < listItems.length; i ++) {
-            const listItem = listItems[i];
-            if (letter === listItem.textContent) {
-                listItem.className = `show letter ${letter}`; 
+            if (letter === listItems[i].textContent) {
+                listItems[i].className = `show letter ${letter}`; 
             }
         }
     }

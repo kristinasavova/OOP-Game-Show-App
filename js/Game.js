@@ -103,4 +103,12 @@ class Game {
             document.querySelector ('#overlay').className = 'lose';
         } 
     }
+
+    /**
+     * Handles onscreen keyboard button clicks
+     * @param (HTMLButtonElement) button - the clicked button element
+     */
+    handleInteraction (button) {
+        button.disabled = true; 
+    }
 }
