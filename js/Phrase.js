@@ -4,7 +4,7 @@
   * Phrase.js
   */
 
-  class Phrase {
+class Phrase {
     constructor (phrase) {
         this.phrase = phrase.toLowerCase (); 
     }
@@ -27,4 +27,34 @@
             document.querySelector ('#phrase ul').appendChild (listItem);
         }
     }
-  }
+
+    /**
+     * Checks if passed letter is in phrase
+     * @param {string} letter - letter to check 
+     */
+    checkLetter (letter) {
+        const listItems = document.querySelector ('#phrase ul').children;
+        for (let i = 0; i < listItems.length; i ++) {
+            const listItem = listItems[i];
+            if (letter === listItem.textContent) {
+                return true;
+            } else {
+                return false; 
+            }
+        }
+    }
+
+    /**
+     * Displays passed letter on screen after a match is found  
+     * @param {string} letter - letter to display 
+     */
+    showMatchedLetter (letter) {
+        const listItems = document.querySelector ('#phrase ul').children;
+        for (let i =0; i < listItems.length; i ++) {
+            const listItem = listItems[i];
+            if (letter === listItem.textContent) {
+                listItem.className = `show letter ${letter}`; 
+            }
+        }
+    }
+}
