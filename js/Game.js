@@ -17,10 +17,10 @@ class Game {
      */
     createPhrases () {
         let phrases = ['You are a wizard', 
-                       'Never trust anything that can think for itself if you cannot see where it keeps its brain',
+                       'One can never have enough socks',
                        'Every human life is worth the same and worth saving',
                        'Dobby is free',
-                       'I solemnly swear I am up to no good'];
+                       'Have a biscuit'];
         return phrases; 
     }
 
@@ -38,8 +38,21 @@ class Game {
      * Begins game by selecting a random phrase and displaying it to user
      */
     startGame () {
-        document.querySelector ('#overlay').style.display = 'none';  
-        this.activePhrase.addPhraseToDisplay ();   
+        const list = document.querySelector ('#phrase ul'); 
+        list.innerHTML = ''; 
+        const keyButtons = document.querySelectorAll ('.keyrow button');
+        for (let i = 0; i < keyButtons.length; i ++) {
+            keyButtons[i].disabled = false;
+            keyButtons[i].className = 'key';  
+        }
+        const hearts = document.querySelectorAll ('.tries img'); 
+        for (let i = 0; i < hearts.length; i ++) {
+            hearts[i].removeAttribute ('src');
+            hearts[i].setAttribute ('src', 'images/liveHeart.png');
+        }
+        this.missed = 0; 
+        this.activePhrase.addPhraseToDisplay ();
+        document.querySelector ('#overlay').style.display = 'none';      
     }
 
     /**
@@ -119,7 +132,5 @@ class Game {
                 this.gameOver (true);
             }
         }
-
-        console.log (button);
     }
 }

@@ -17,7 +17,3 @@ for (let i = 0; i < buttons.length; i ++) {
         game.handleInteraction (event.target); 
     });
 }
-
-// document.querySelector ('#qwerty').addEventListener ('click', (event) => {
-//     game.handleInteraction (event.target); 
-// });
