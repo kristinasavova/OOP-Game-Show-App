@@ -30,9 +30,7 @@ class Game {
      */
     getRandomPhrase () {
         for (let i = 0; i < this.phrases.length; i ++) {
-            const randomPhrase = this.phrases[Math.floor(Math.random() * this.phrases.length - 1)]; 
-            this.phrases.push (randomPhrase);
-            return randomPhrase; 
+            return this.phrases[Math.floor(Math.random() * this.phrases.length)]; 
         }
     } 
 
@@ -122,7 +120,7 @@ class Game {
      * Handles onscreen keyboard button clicks
      * @param (HTMLButtonElement) button - the clicked button element
      */
-    handleInteraction (button) {
+    handleInteraction (button) { 
         button.disabled = true; 
         if (!this.activePhrase.checkLetter (button.textContent)) {
             button.className = 'wrong'; 
