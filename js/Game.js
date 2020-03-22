@@ -50,12 +50,11 @@ class Game {
         const listItems = document.querySelector ('#phrase ul').children;
         for (let i = 0; i < listItems.length; i ++) {
             let listItem = listItems[i]; 
-            if (/^show\sletter\s[a-z]?$/.test(listItem.className)) {
-                return true; 
-            } else {
+            if (listItem.classList.value.includes ('hide letter')) {
                 return false; 
-            } 
+            }
         }
+        return true; 
     }
 
     /**
@@ -110,5 +109,17 @@ class Game {
      */
     handleInteraction (button) {
         button.disabled = true; 
+        if (!this.activePhrase.checkLetter (button.textContent)) {
+            button.className = 'wrong'; 
+            this.removeLife ();            
+        } else {
+            button.className = 'chosen'; 
+            this.activePhrase.showMatchedLetter (button.textContent);
+            if (this.checkForWin ()) {
+                this.gameOver (true);
+            }
+        }
+
+        console.log (button);
     }
 }

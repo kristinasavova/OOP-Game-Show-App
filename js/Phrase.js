@@ -33,16 +33,13 @@ class Phrase {
      * @param {string} letter - letter to check 
      */
     checkLetter (letter) {
-        const listItems = document.querySelector ('#phrase ul').children;
-        for (let i = 0; i < listItems.length; i ++) {
-            if (letter === listItems[i].textContent) {
-                return true;
-            } else {
-                return false; 
-            }
+        if (this.phrase.includes (letter)) {
+            return true;
+        } else {
+            return false;
         }
     }
-
+    
     /**
      * Displays passed letter on screen after a match is found  
      * @param {string} letter - letter to display 
