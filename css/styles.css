@@ -4,9 +4,9 @@
 /* Variables */
 
 :root {
-  --color-win: #BF2B0A;
-  --color-lose: #585A73;
-  --color-start: #585A73;
+  --color-win: #78CF82;
+  --color-lose: #D94545;
+  --color-start: #5b85b7;
   --color-neutral: #445069;
   --color-neutral-light: #D2D2D2;
   --color-keys: #37474F;
@@ -176,15 +176,15 @@ button {
 }
 
 .title {
-  color: #F2F2F2;
+  color: #FFF;
 }
 
 .start {
-  background-color: #585A73;
+  background-color: #3a3f58;
 }
 
 .start a {
-  color: #F2F2F2;
+  color: #fff;
 }
 
 .win {
@@ -196,7 +196,7 @@ button {
 }
 
 .lose {
-  background-color: #585A73;
+  background-color: #f5785f;
 }
 
 .lose a {

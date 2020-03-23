@@ -30,7 +30,7 @@ class Game {
      */
     getRandomPhrase () {
         for (let i = 0; i < this.phrases.length; i ++) {
-            return this.phrases[Math.floor(Math.random() * this.phrases.length)]; 
+            return this.phrases[Math.floor (Math.random() * this.phrases.length)];
         }
     } 
 
