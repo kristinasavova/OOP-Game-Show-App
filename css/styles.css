@@ -120,7 +120,6 @@ button {
   border-radius: 5px;
   -webkit-animation-duration: .5s;
   animation-duration: .5s;
-  text-transform: uppercase;
   background-image: linear-gradient(to right, #29323c, #4e4376);
   box-shadow: 0 4px 15px 0 rgba(45, 54, 65, 0.75);
 }
