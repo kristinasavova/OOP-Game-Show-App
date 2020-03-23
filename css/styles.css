@@ -52,12 +52,12 @@ button {
   padding: .5rem 1rem;
   color: var(--color-keys);
   font-size: var(--font-size-medium);
-  background-color: var(--color-keys-light);
   border-radius: 5px;
   -webkit-transition: var(--transition);
   -o-transition: var(--transition);
   transition: var(--transition);
   cursor: pointer;
+  background-image: linear-gradient(to right, #a1c4fd, #c2e9fb);
 }
 
 #btn__reset {
@@ -87,6 +87,7 @@ button {
 
 .header {
   color: #3a3f58;
+  text-shadow: 1px 1px 2px #3a3f58;
 }
 
 
@@ -99,7 +100,7 @@ button {
   padding: 20px 1px 0 1px;
   margin-right: 2px;
   color: transparent;
-  background: var(--color-neutral-light);
+  background-image: linear-gradient(to right, #a1c4fd, #c2e9fb);
   border-radius: 5px;
 }
 
@@ -111,7 +112,6 @@ button {
 
 .show {
   color: #fff;
-  background-color: #4ac0d5;
   font-size: 20px;
   height: 65px;
   width: 65px;
@@ -120,6 +120,9 @@ button {
   border-radius: 5px;
   -webkit-animation-duration: .5s;
   animation-duration: .5s;
+  text-transform: uppercase;
+  background-image: linear-gradient(to right, #29323c, #4e4376);
+  box-shadow: 0 4px 15px 0 rgba(45, 54, 65, 0.75);
 }
 
 
@@ -145,12 +148,12 @@ button {
 .btn__reset {
   padding: 16px;
   margin: 50px auto;
-  background: #f7a964;
   border-radius: 5px;
   font-size: 20px;
   cursor: pointer;
   border-bottom: solid 4px rgba(0, 0, 0, .3);
-  border-right: solid 3px rgba(0, 0, 0, .3)
+  border-right: solid 3px rgba(0, 0, 0, .3);
+  background-image: linear-gradient(to right, #f7a964, #f6d365);
 }
 
 .btn__reset:active {
@@ -177,10 +180,11 @@ button {
 
 .title {
   color: #FFF;
+  text-shadow: 1px 1px 2px #ffffff;
 }
 
 .start {
-  background-color: #3a3f58;
+  background-image: linear-gradient(to bottom right, #3a3f58, #000000);
 }
 
 .start a {
@@ -188,7 +192,7 @@ button {
 }
 
 .win {
-  background-color: var(--color-win);
+  background-image: linear-gradient(to bottom right, #ffffff, var(--color-win));
 }
 
 .win a {
@@ -196,7 +200,7 @@ button {
 }
 
 .lose {
-  background-color: #f5785f;
+  background-image: linear-gradient(to bottom right, #ffffff, #f5785f);
 }
 
 .lose a {

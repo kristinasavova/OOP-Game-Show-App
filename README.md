@@ -8,5 +8,8 @@
  1. A Game class for managing the game 
  2. A Phrase class for creating an array of Phrase objects 
  
- 
+ The provided styles.css file was updated:
+ 1. Linear gradient is used for background images and buttons 
+ 2. Text shadows are used for headings 
+ 3. Box-shadow is used for letters in phrases to give them a 3D view 
 
