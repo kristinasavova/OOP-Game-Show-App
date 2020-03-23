@@ -113,6 +113,7 @@ button {
 .show {
   color: #fff;
   font-size: 20px;
+  text-transform: uppercase;
   height: 65px;
   width: 65px;
   padding: 20px 1px 0 1px;
