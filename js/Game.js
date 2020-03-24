@@ -8,7 +8,7 @@ class Game {
     constructor () {
         this.missed = 0;
         this.phrases = this.createPhrases (); 
-        this.activePhrase = new Phrase (this.getRandomPhrase ()); 
+        this.activePhrase = null;  
     }
 
     /**
@@ -38,6 +38,7 @@ class Game {
      * Begins game by selecting a random phrase and displaying it to user
      */
     startGame () {
+        this.activePhrase = new Phrase (this.getRandomPhrase ());
         const list = document.querySelector ('#phrase ul'); 
         list.innerHTML = ''; 
         const keyButtons = document.querySelectorAll ('.keyrow button');
@@ -131,6 +132,6 @@ class Game {
             if (this.checkForWin ()) {
                 this.gameOver (true);
             }
-        }
-    }
+        }   
+     }  
 }
