@@ -18,7 +18,7 @@ class Game {
     createPhrases () {
         let phrases = ['You are a wizard', 
                        'One can never have enough socks',
-                       'Every human life is worth the same and worth saving',
+                       'Every human life is worth the same',
                        'Dobby is free',
                        'Have a biscuit'];
         return phrases; 
