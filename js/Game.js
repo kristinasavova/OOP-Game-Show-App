@@ -121,16 +121,19 @@ class Game {
      * Handles onscreen keyboard button clicks
      * @param (HTMLButtonElement) button - the clicked button element
      */
-    handleInteraction (button) { 
-        button.disabled = true; 
-        if (!this.activePhrase.checkLetter (button.textContent)) {
-            button.className = 'wrong'; 
-            this.removeLife ();            
-        } else {
-            button.className = 'chosen'; 
-            this.activePhrase.showMatchedLetter (button.textContent);
-            if (this.checkForWin ()) {
-                this.gameOver (true);
+    handleInteraction (button) {  
+        if (button.disabled !== true) {
+            if (!this.activePhrase.checkLetter (button.textContent)) {
+                button.className = 'wrong'; 
+                this.removeLife ();   
+                button.disabled = true;         
+            } else {
+                button.className = 'chosen'; 
+                this.activePhrase.showMatchedLetter (button.textContent);
+                button.disabled = true;
+                if (this.checkForWin ()) {
+                    this.gameOver (true);
+                }
             }
         }   
      }  

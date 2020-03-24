@@ -30,10 +30,8 @@ for (let i = 0; i < buttons.length; i ++) {
 document.addEventListener ('keyup', (event) => { 
     for (let i = 0; i < buttons.length; i ++) {
         if (event.key === buttons[i].textContent) {
-            console.log (event.key);
             game.handleInteraction (buttons[i]);
         }
     }
 });
-
 
