@@ -39,19 +39,6 @@ class Game {
      */
     startGame () {
         this.activePhrase = new Phrase (this.getRandomPhrase ());
-        const list = document.querySelector ('#phrase ul'); 
-        list.innerHTML = ''; 
-        const keyButtons = document.querySelectorAll ('.keyrow button');
-        for (let i = 0; i < keyButtons.length; i ++) {
-            keyButtons[i].disabled = false;
-            keyButtons[i].className = 'key';  
-        }
-        const hearts = document.querySelectorAll ('.tries img'); 
-        for (let i = 0; i < hearts.length; i ++) {
-            hearts[i].removeAttribute ('src');
-            hearts[i].setAttribute ('src', 'images/liveHeart.png');
-        }
-        this.missed = 0; 
         this.activePhrase.addPhraseToDisplay ();
         document.querySelector ('#overlay').style.display = 'none';      
     }
@@ -108,6 +95,19 @@ class Game {
      */
     gameOver (gameWon) {
         document.querySelector ('#overlay').style.display = '';
+        const list = document.querySelector ('#phrase ul'); 
+        list.innerHTML = ''; 
+        const keyButtons = document.querySelectorAll ('.keyrow button');
+        for (let i = 0; i < keyButtons.length; i ++) {
+            keyButtons[i].disabled = false;
+            keyButtons[i].className = 'key';  
+        }
+        const hearts = document.querySelectorAll ('.tries img'); 
+        for (let i = 0; i < hearts.length; i ++) {
+            hearts[i].removeAttribute ('src');
+            hearts[i].setAttribute ('src', 'images/liveHeart.png');
+        }
+        this.missed = 0; 
         if (gameWon) {
             document.querySelector ('#game-over-message').innerHTML = `<h1>Great Job!</h1>`;
             document.querySelector ('#overlay').className = 'win'; 
